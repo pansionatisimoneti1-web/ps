@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>ვებსაიტი</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* მენიუ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      display: flex;
+      justify-content: space-evenly;
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff4444;
+    }
+
+    /* აქტიური გვერდის ლინკი */
+    nav a.active {
+      color: #ff4444;
+      border-bottom: 2px solid #ff4444;
+      padding-bottom: 2px;
+    }
+
+    /* გვერდები */
+    .page {
+      display: none; /* თავიდან ყველა დამალულია */
+      width: 100%;
+      min-height: 100vh;
+      padding-top: 100px; /* nav + სათაურის ადგილი */
+      box-sizing: border-box;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 2em;
+    }
+
+    /* მთავარი გვერდი – ფონად სურათი */
+    .main {
+      background: url("foni2.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+	.main { background: #0E0AF0; }
+    .gallery { background: #0E0AF0; }
+    .staff { background: #0E0AF0; }
+    .contact { background: #0E0AF0; }
+    .ruka { background: #0E0AF0; }
+    .Tanamshromlebi { background: #0E0AF0; }
+    .administracia { background: #0E0AF0; }
+    .istoria { background: #0E0AF0; }
+
+    /* მთავარი სათაური */
+    .main-title {
+      font-size: 56px;
+      font-weight: 800;
+      text-align: center;
+      margin: 20px 0 20px 0;
+      color: #C827F5;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    }
+
+    /* პატარა ჩარჩო სათაურის ქვეშ */
+    .small-frame {
+      margin: 15px 0 35px 0;
+      padding: 15px 26px;
+      border: 5px solid #0f0;
+      border-radius: 20px;
+      background: rgba(0,255,0,0.2); /* მწვანე ფონი */
+      font-size: 22px;
+      font-weight: bold;
+      color: #19E320;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      overflow: hidden;
+      white-space: nowrap;
+      width: 320px;
+    }
+
+    /* მოძრავი ტექსტი */
+    .scroll-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll 4s linear infinite; /* 12 წამში ერთხელ */
+    }
+
+    @keyframes scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .images {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .images img {
+      max-width: 150px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 50px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .images img:hover {
+      transform: scale(1.8);
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      z-index: 10;
+    }
+
+    h2 { display: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a data-page="main">მთავარი</a>
+  <a data-page="gallery">გალერეა</a>
+  <a data-page="staff">პერსონალი</a>
+  <a data-page="contact">კონტაქტი</a>
+  <a data-page="ruka">რუკა</a>
+  <a data-page="istoria">ჩვენს შესახებ</a>
+</nav>
+
+<!-- მთავარი გვერდი -->
+<div id="main" class="page main">
+  <h1 class="main-title">მოხუცთა თავშესაფარი "სიმონეთი"</h1>
+
+  <!-- მოძრავი პატარა ჩარჩო -->
+  <div class="small-frame">
+    <span class="scroll-text">ჩვენ ვიზრუნებთ თქვენზე</span>
+  </div>
+
+  <div class="images">
+    <img src="1.jpeg" alt="სურათი1">
+  </div>
+  <p style="max-width: 800px; text-align: center; font-size: 22px; margin-top: 30px;">
+    რა არის მოხუცებულთა სახლი და ვისთვის არის ის განკუთვნილი?
+მოხუცებულთა სახლებს ასევე უწოდებენ საცხოვრებელ მოხუცებულთა სახლებს ან მოხუცებულთა სახლებს მოხუცებულთა მოვლის სახლებთან ერთად. მათ ჰყავთ კვალიფიციური ექთნები, რომლებიც უზრუნველყოფენ საექთნო მომსახურებას საცხოვრებელი მოვლის გარდა.
+
+მათი მიზანია უზრუნველყონ მოვლა და მხარდაჭერა კონკრეტული მდგომარეობების ან სხვადასხვა სახის შეზღუდული შესაძლებლობების მქონე ადამიანებისთვის. ამ პირებს მნიშვნელოვნად უჭირთ ყოველდღიურ ცხოვრებაში და სჭირდებათ დამატებითი მხარდაჭერა. ადგილზე ყოველთვის არის მინიმუმ ერთი კვალიფიციური და რეგისტრირებული ექთანი.
+
+ეს ნიშნავს, რომ მაცხოვრებლებს აქვთ წვდომა 24-საათიან სამედიცინო მომსახურებაზე და კვალიფიციურ საექთნო მხარდაჭერაზე.
+
+პერსონალი გაწვრთნილია კონკრეტული სამედიცინო მდგომარეობის მქონე ადამიანების მოსავლელად. ისინი სპეციალიზირებულნი არიან ჯანმრთელობის პრობლემებისა და შეზღუდული შესაძლებლობების მქონე ადამიანების მოვლაში,
+მოხუცებულთა სახლები განკუთვნილია იმ ადამიანებისთვის, რომელთა მოვლაც სახლში საკმარისად შეუძლებელია, რადგან მათ სჭირდებათ რეგულარული სამედიცინო დახმარება, 
+    ...
+  </p>
+</div> <!-- მთავარის div დაიხურა -->
+
+
+
+<!-- გალერეა -->
+<div id="gallery" class="page gallery">
+  <div class="images">
+    <img src="20.jpg" alt="სურათი20">
+	<img src="21.jpg" alt="სურათი21">
+	<img src="22.jpg" alt="სურათი22">
+	<img src="23.jpg" alt="სურათი23">
+	<img src="24.jpg" alt="სურათი24">
+	<img src="25.jpg" alt="სურათი25">
+	<img src="27.jpg" alt="სურათი27">
+	<img src="28.jpg" alt="სურათი28">
+    <img src="29.jpg" alt="სურათი29">
+	<img src="30.jpg" alt="სურათი30">
+	<img src="19.jpg" alt="სურათი19">
+	<img src="2.jpg" alt="სურათი2">
+  </div>
+</div>
+
+<!-- პერსონალი -->
+<div id="staff" class="page staff">
+  <div class="images">
+    <img src="12.jpg" alt="სურათი12">
+    <img src="14.jpg" alt="სურათი14">
+    <img src="15.jpg" alt="სურათი15">
+    <img src="16.jpg" alt="სურათი16">
+    <img src="18.jpg" alt="სურათი18">
+	<img src="11.jpg" alt="სურათი11">
+  </div>
+</div>
+
+<!-- კონტაქტი -->
+<div id="contact" class="page contact">
+  <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.4); max-width: 500px;">
+    <h2 style="color: #FFD700; margin-bottom: 20px;">კონტაქტი</h2>
+    <p style="font-size: 24px;">📞 577-280832</p>
+    <p style="font-size: 22px;">📍 სოფელი ქვედა სიმონეთი</p>
+    <p style="font-size: 20px;">(დედათა მონასტერის მიმდებარე ტერიტორია)</p>
+	<!-- მოძრავი პატარა ჩარჩო -->
+  <div class="small-frame">
+    <span class="scroll-text">გვენდეთ და ჩვენი იმედი გქონდეთ</span>
+  </div>
+  </div>
+</div>
+
+<!-- რუკა -->
+<div id="ruka" class="page ruka">
+  <h1>რუკა</h1>
+</div>
+
+<!-- ჩვენს შესახებ -->
+<div id="istoria" class="page istoria">
+  <h1>ჩვენ</h1>
+</div>
+
+<!-- გვერდების გადართვის სკრიპტი -->
+<script>
+  const links = document.querySelectorAll("nav a");
+  const pages = document.querySelectorAll(".page");
+
+  function showPage(pageId) {
+    pages.forEach(p => p.style.display = "none");
+    document.getElementById(pageId).style.display = "flex";
+
+    links.forEach(l => l.classList.remove("active"));
+    document.querySelector(`nav a[data-page="${pageId}"]`).classList.add("active");
+  }
+
+  // ჩატვირთვისას მთავარზე გადასვლა
+  showPage("main");
+
+  // ბმულებზე დაკლიკება
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      const pageId = link.getAttribute("data-page");
+      showPage(pageId);
+    });
+  });
+</script>
+
+</body>
+</html>
